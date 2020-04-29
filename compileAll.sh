@@ -22,7 +22,7 @@ mkdir -p bibliography
 cp /Users/michi/Dropbox/Pro/BibTex/bib.bib bibliography/localbib.bib
 
 echo "Launching PanDoc..."
-pandoc -T -s -V geometry="paperwidth=21cm, paperheight=29.7cm, margin=2.54cm" --bibliography=./bibliography/localbib.bib --pdf-engine=xelatex --csl=./csl_style/european-journal-of-neuroscience.csl ./Output/manuscript.md -o ./Output/manuscript.pdf
+#pandoc -T -s -V geometry="paperwidth=21cm, paperheight=29.7cm, margin=2.54cm" --bibliography=./bibliography/localbib.bib --pdf-engine=xelatex --csl=./csl_style/european-journal-of-neuroscience.csl ./Output/manuscript.md -o ./Output/manuscript.pdf
 
 pandoc -T -s -V geometry="paperwidth=21cm, paperheight=29.7cm, margin=2.54cm" --bibliography=./bibliography/localbib.bib --csl=./csl_style/european-journal-of-neuroscience.csl --reference-doc=./templates/manuscript-docx.docx ./Output/manuscript.md -o ./Output/manuscript.docx
 
