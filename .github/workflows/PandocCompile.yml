@@ -17,3 +17,12 @@ jobs:
       run: sudo apt-get install -y pandoc-citeproc
     - name: Compile all and produce *.docx, *.pdf, and *.html files
       run: ./compileAll.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        path: Output/manuscript.docx
+    - uses: actions/upload-artifact@v2
+      with:
+        path: Output/manuscript.html
+
+
+
