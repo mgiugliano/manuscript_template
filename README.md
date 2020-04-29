@@ -1,3 +1,3 @@
-Manuscript Template - Private Repository
+Manuscript Template - Make it a private repository
 
 See https://github.com/citation-style-language/styles for csl style files...

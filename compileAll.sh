@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 echo "Deleting old files..."
-rm manuscript.docx
-rm manuscript.pdf
-rm manuscript.md
+rm -f manuscript.docx
+rm -f manuscript.pdf
+rm -f manuscript.md
+rm -f manuscript.html
 
 echo "Concatenating together the individual text files..."
 touch manuscript.md
@@ -17,13 +18,12 @@ cat Text/7_captions.md   >> manuscript.md
 cat Text/8_ack.md        >> manuscript.md
 
 echo "Importing the most updated bibliography file..."
+mkdir -p bibliography
 cp /Users/michi/Dropbox/Pro/BibTex/bib.bib bibliography/localbib.bib
 
 echo "Launching PanDoc..."
-#pandoc -T -s -V geometry="paperwidth=21cm, paperheight=29.7cm, margin=2.54cm" --bibliography=/Users/michi/Dropbox/Pro/BibTex/bib.bib --pdf-engine=xelatex --csl=./csl_style/european-journal-of-neuroscience.csl manuscript.md -o manuscript.pdf
+pandoc -T -s -V geometry="paperwidth=21cm, paperheight=29.7cm, margin=2.54cm" --bibliography=./bibliography/localbib.bib --pdf-engine=xelatex --csl=./csl_style/european-journal-of-neuroscience.csl manuscript.md -o manuscript.pdf
 
 pandoc -T -s -V geometry="paperwidth=21cm, paperheight=29.7cm, margin=2.54cm" --bibliography=./bibliography/localbib.bib --csl=./csl_style/european-journal-of-neuroscience.csl --reference-doc=./templates/manuscript-docx.docx manuscript.md -o manuscript.docx
 
-
-#pandoc -V geometry="paperwidth=21cm, paperheight=29.7cm, margin=2.54cm" --bibliography=./bib.bib --csl=./csl_style/european-journal-of-neuroscience.csl --reference-doc=./templates/manuscript-docx.docx manuscript.md -o manuscript.docx
-
+pandoc --bibliography=./bibliography/localbib.bib --csl=./csl_style/european-journal-of-neuroscience.csl manuscript.md -f markdown -t html -s -o manuscript.html
