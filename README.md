@@ -1,1 +1,3 @@
-# manuscript_template
+Manuscript Template - Private Repository
+
+See https://github.com/citation-style-language/styles for csl style files...
