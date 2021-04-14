@@ -1,6 +1,6 @@
 # Acknowledgements
 We thank ... for discussions and ... for technical assistance.
-Financial support from ... (grant n. to MG) is kindly ackowledged.
+Financial support from ... (grant n. ... to MG) is kindly ackowledged.
 The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
 
 # Authors contribution
